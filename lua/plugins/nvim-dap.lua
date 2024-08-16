@@ -1,8 +1,14 @@
 return {
-  	{
+  {
+    "ldelossa/nvim-dap-projects",
+    event = "VeryLazy",
+  },
+  
+  {
 		"mfussenegger/nvim-dap",
 		config = function()
 			require("configs.dap")
+      require("nvim-dap-projects").search_project_config()
 		end,
 	},
 
@@ -25,4 +31,8 @@ return {
 		end,
 		requires = { "mfussenegger/nvim-dap" },
 	},
+
+  {
+    "folke/neodev.nvim", opts = {},
+  },
 }
