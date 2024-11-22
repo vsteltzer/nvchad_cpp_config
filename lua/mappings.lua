@@ -17,7 +17,7 @@ map("n", "<Leader>dh", "<cmd>lua require'dap'.step_out()<CR>", { desc = "Debugge
 map("n", "<Leader>dr", "<cmd>lua require'dap'.continue()<CR>", { desc = "Debugger run/continue" })
 map("n", "<Leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "Debugger toggle breakpoint" })
 map("n", "<Leader>dd", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { desc = "Debugger set conditional breakpoint" })
-map("n", "<Leader>dq", "<cmd>lua require'dap'.terminate()<CR>", { desc = "Debugger terminate" })
+map("n", "<Leader>dq", function() require'dap'.terminate() require'dapui'.close() end, { desc = "Debugger terminate and ui close" })
 map("n", "<Leader>dc", "<cmd>lua require'dapui'.close()<CR>", { desc = "Debugger ui close" })
 map("n", "<Leader>da", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugger run last" })
 map("n", "<leader>df", "<cmd>lua require'dapui'.open({reset = true})<CR>", { desc = "Debugger layout reset." })
