@@ -5,11 +5,13 @@ require("configs.dap.ui")
 
 -- debuggers
 local lldb = require("configs.dap.adapters.lldb")
+local cpptools = require("configs.dap.adapters.cpptools")
 
 dap.adapters.lldb = lldb.adapter
+dap.adapters.cppdbg = cpptools.adapter
 
-dap.configurations.c = lldb.config
-dap.configurations.cpp = lldb.config
+dap.configurations.c = cpptools.config
+dap.configurations.cpp = cpptools.config
 dap.configurations.rust = lldb.config
 
 require("neodev").setup({
